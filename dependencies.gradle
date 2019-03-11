@@ -1,0 +1,42 @@
+ext {
+    // API dependencies
+    gsonVersion = '2.8.0'
+    rxJavaVersion = '2.2.2'
+    jsonConverterVersion = '1.0.2'
+    rxMessengerVersion = '4.0.0'
+    
+    // Test dependencies
+    junitVersion = '4.12'
+    hamcrestVersion = '1.3'
+    mockitoVersion = '1.10.19'
+    assertJVersion = '2.7.0'
+    androidMockableVersion = '26'
+    robolectricVersion = '3.3.2'
+
+    butterKnifeVersion = '8.8.1'
+
+    projectTargetSdkVersion = 28
+    projectMinSdkVersion = 21
+
+    apiDependencies = [
+            androidMockable: "com.google:android-mockable-default-values:$androidMockableVersion",
+            rxJava         : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxMessenger    : "com.aevi.android:rxmessenger:$rxMessengerVersion",
+            gson           : "com.google.code.gson:gson:$gsonVersion",
+            jsonConverter  : "com.aevi.util:json-converter:$jsonConverterVersion",
+    ]
+
+    aptDependencies = [
+            butterKnife: "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
+    ]
+
+    testDependencies = [
+            junit       : "junit:junit:$junitVersion",
+            hamcrestCore: "org.hamcrest:hamcrest-core:$hamcrestVersion",
+            hamcrestInt : "org.hamcrest:hamcrest-integration:$hamcrestVersion",
+            hamcrestLib : "org.hamcrest:hamcrest-library:$hamcrestVersion",
+            mockito     : "org.mockito:mockito-core:$mockitoVersion",
+            assertJ     : "org.assertj:assertj-core:$assertJVersion",
+            robolectric : "org.robolectric:robolectric:$robolectricVersion",
+    ]
+}

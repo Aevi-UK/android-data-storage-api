@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    compileOnly apiDependencies.androidMockable
+    implementation apiDependencies.gson
+    api apiDependencies.rxJava
+    api apiDependencies.rxMessenger
+}
+
+apply from: '../jar-publisher.gradle'
+apply from: '../bintray.gradle'
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.8"
