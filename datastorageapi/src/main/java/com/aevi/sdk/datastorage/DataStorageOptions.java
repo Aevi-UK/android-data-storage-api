@@ -13,7 +13,54 @@
  */
 package com.aevi.sdk.datastorage;
 
-public class DataStorageOptions {
+import android.content.Context;
+
+import com.aevi.util.json.JsonConverter;
+import com.aevi.util.json.Jsonable;
 
 
+public class DataStorageOptions implements Jsonable {
+
+    public static final String ACCESS_PUBLIC = "public";
+    public static final String ACCESS_PRIVATE = "private";
+    public static final String ACCESS_PROTECTECD = "protected";
+
+    public final String packageName;
+    public String category;
+    public String access;
+    public String[] protectedPackages;
+    public boolean storeOnline;
+
+    private DataStorageOptions(Context context) {
+        packageName = context.getPackageName();
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getAccess() {
+        return access;
+    }
+
+    public String[] getProtectedPackages() {
+        return protectedPackages;
+    }
+
+    public boolean isStoreOnline() {
+        return storeOnline;
+    }
+
+    @Override
+    public String toJson() {
+        return JsonConverter.serialize(this);
+    }
+
+    public static DataStorageOptions fromJson(String json) {
+        return JsonConverter.deserialize(json, DataStorageOptions.class);
+    }
 }

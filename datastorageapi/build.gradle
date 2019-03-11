@@ -3,8 +3,10 @@ apply plugin: 'java-library'
 dependencies {
     compileOnly apiDependencies.androidMockable
     implementation apiDependencies.gson
+    implementation apiDependencies.jsonConverter
     api apiDependencies.rxJava
     api apiDependencies.rxMessenger
+
 }
 
 apply from: '../jar-publisher.gradle'
